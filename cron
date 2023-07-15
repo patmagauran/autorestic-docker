@@ -1,0 +1,5 @@
+# This is required, as it otherwise cannot find restic as a command.
+PATH="/usr/local/bin:/usr/bin:/bin"
+
+# Example running every 5 minutes
+*/5 * * * * autorestic -c /app/autorestic.yml --ci cron
