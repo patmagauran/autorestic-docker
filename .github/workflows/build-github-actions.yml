@@ -9,7 +9,7 @@ on:
   schedule:
     - cron: 0 0 * * *  # Run every 24 hours
   push:
-    branches: [ $default-branch ]
+    branches: [ main ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   workflow_dispatch:
