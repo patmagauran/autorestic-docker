@@ -12,6 +12,7 @@ on:
     branches: [ $default-branch ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
+  workflow_dispatch:
 
 env:
   # github.repository as <account>/<repo>
