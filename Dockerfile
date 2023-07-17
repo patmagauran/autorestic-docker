@@ -12,11 +12,17 @@ RUN crontab /etc/cron.d/cron
 # Link cron log file to stdout
 RUN ln -s /dev/stdout /var/log/cron
 
+RUN mkdir /app
+
+RUN chmod 777 /app
+
 COPY entrypoint.sh /app/entrypoint.sh
 
 RUN chmod 0555 /app/entrypoint.sh
 
 RUN apk add --no-cache bash wget bzip2
+
+
 
 RUN wget -qO - https://raw.githubusercontent.com/cupcakearmy/autorestic/master/install.sh | bash
 # Run the cron service in the foreground
